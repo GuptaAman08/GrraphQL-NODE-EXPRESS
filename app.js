@@ -99,7 +99,7 @@ app.use((error, req, res, next) => {
     })
 })
 
-mongoose.connect('mongodb+srv://aman:snZ5L0a4JMbsXqWG@primary.u62r1.mongodb.net/feeds?retryWrites=true&w=majority', {useUnifiedTopology: true, useNewUrlParser: true})
+mongoose.connect(`${process.env.MONGO_CON_URI}`, {useUnifiedTopology: true, useNewUrlParser: true})
 .then(res => {
     console.log('Connected')
     app.listen(8080);
